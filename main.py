@@ -9,6 +9,7 @@ def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
 
 @app.route('/api/authenticated')
+def authenticate():
     return jsonify({"message": "Authenticated successfully."}), 200
 
 
