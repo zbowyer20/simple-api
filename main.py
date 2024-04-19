@@ -15,8 +15,10 @@ def index():
 def maybe_fail():
     app.logger.info("Maybe fails called.")
     if random.random() < 0.9:  # random.random() generates a float between 0.0 and 1.0
+        app.logger.info("Failure!!")
         return jsonify({"error": "Something went wrong!"}), 500
     else:
+        app.logger.info("Success!")
         return jsonify({"message": "All is well!"}), 200
 
 @app.route('/api/authenticated')
