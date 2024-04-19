@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
 
-@app.route('/maybeFails')
+@app.route('/maybeFails', methods=['GET', 'POST'])
 def maybe_fail():
     app.logger.info("Maybe fails called.")
     if random.random() < 0.9:  # random.random() generates a float between 0.0 and 1.0
